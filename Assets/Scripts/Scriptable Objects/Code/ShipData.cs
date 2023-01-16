@@ -1,13 +1,14 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Serialization;
 
-[CreateAssetMenu]
-public class ShipData : ScriptableObject
+namespace Scriptable_Objects.Code
 {
-    public int shipHealth;
-    public float shipThrustSpeed;
-    public float shipRotationSpeed;
-    public Vector2 shipPosition;
+    [CreateAssetMenu]
+    public class ShipData : ScriptableObject
+    {
+        public int shipHealth;
+        public float shipThrustForce;
+        public float shipRotationForce;
+        public Vector2 shipPosition;
+        public Vector2 shipStartPosition;
+    }
 }

@@ -1,18 +1,26 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class Bullet : MonoBehaviour
+namespace Game_Scripts
 {
-    // Start is called before the first frame update
-    void Start()
+    public class Bullet : MonoBehaviour
     {
+        public Bullet bulletData;
         
-    }
+        [SerializeField] private float bulletSpeed;
+        [SerializeField] private int bulletMaxAmount;
+        [SerializeField] private int bulletHealth;
+        // Start is called before the first frame update
+        void Start()
+        {
+            bulletSpeed = bulletData.bulletSpeed;
+            bulletHealth = bulletData.bulletHealth;
+            bulletMaxAmount = bulletData.bulletMaxAmount;
+        } 
 
-    // Update is called once per frame
-    void Update()
-    {
+        // Update is called once per frame
+        void Update()
+        {
         
+        }
     }
 }
