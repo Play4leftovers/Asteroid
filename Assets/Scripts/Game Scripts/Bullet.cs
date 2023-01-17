@@ -10,8 +10,6 @@ namespace Game_Scripts
         
         private Rigidbody2D _rb;
         
-        [SerializeField] private float bulletSpeed;
-        [SerializeField] private int bulletMaxAmount;
         [SerializeField] private int bulletHealth;
         
         // Start is called before the first frame update
@@ -19,25 +17,17 @@ namespace Game_Scripts
         {
             _rb = GetComponent<Rigidbody2D>();
             
-            bulletSpeed = bulletData.bulletSpeed;
             bulletHealth = bulletData.bulletHealth;
-            bulletMaxAmount = bulletData.bulletMaxAmount;
-        } 
-
-        // Update is called once per frame
-        void Update()
-        {
-            
         }
 
         public void Shoot(Vector2 dir)
         {
-            _rb.velocity = dir.normalized * bulletSpeed;
+            _rb.velocity = dir.normalized * bulletData.bulletSpeed;
         }
         
         private void OnTriggerEnter2D(Collider2D col)
         {
-            if (col.tag != "Asteroid") return;
+            if (!col.CompareTag("Asteroid")) return;
             col.gameObject.GetComponent<Asteroid>().Break();
             bulletHealth--;
             if (bulletHealth <= 0)
@@ -48,7 +38,7 @@ namespace Game_Scripts
 
         private void OnTriggerExit2D(Collider2D other)
         {
-            if (other.tag == "Background"){ Destroy(gameObject); }
+            if (other.CompareTag("Background")){ Destroy(gameObject); }
         }
     }
 }

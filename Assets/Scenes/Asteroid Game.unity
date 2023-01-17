@@ -253,9 +253,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spawnData: {fileID: 11400000, guid: 5473a80435a91b14d9f0b71d8a441824, type: 2}
   asteroid: {fileID: 4533564646121280496, guid: 3fb36689b247e6b4daadfae50f0087ee, type: 3}
-  asteroidMaxAmount: 0
-  asteroidSpawnRate: 0.5
-  asteroidSpawnDistance: 14
 --- !u!1 &1350833118
 GameObject:
   m_ObjectHideFlags: 0

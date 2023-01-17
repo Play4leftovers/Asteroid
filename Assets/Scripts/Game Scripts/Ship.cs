@@ -18,18 +18,12 @@ namespace Game_Scripts
         private float _shipThrust;
 
         [SerializeField] private int shipHealth;
-        [SerializeField] private float shipThrustForce;
-        [SerializeField] private float shipRotationForce;
-        [SerializeField] private Vector2 shipStartPosition;
         [SerializeField] private Vector2 shipPosition;
         
         // Start is called before the first frame update
         void Awake()
         {
             shipHealth = shipData.shipHealth;
-            shipThrustForce = shipData.shipThrustForce;
-            shipRotationForce = shipData.shipRotationForce;
-            shipStartPosition = shipData.shipStartPosition;
 
             _rb = GetComponent<Rigidbody2D>();
         }
@@ -39,17 +33,18 @@ namespace Game_Scripts
         {
             shipData.shipPosition = shipPosition;
             if (_shipRotationDirection != 0)
-                _rb.AddTorque(-(_shipRotationDirection) * shipRotationForce * Time.deltaTime);
+                _rb.AddTorque(-(_shipRotationDirection) * shipData.shipRotationForce * Time.deltaTime);
             if(_shipThrust != 0)
-                _rb.AddRelativeForce(Vector2.up * (shipThrustForce * Time.deltaTime), ForceMode2D.Force);
+                _rb.AddRelativeForce(Vector2.up * (shipData.shipThrustForce * Time.deltaTime), ForceMode2D.Force);
 
             BoundryCheck();
         }
 
         private void BoundryCheck()
         {
-            float x = transform.position.x;
-            float y = transform.position.y;
+            var position = transform.position;
+            float x = position.x;
+            float y = position.y;
 
             if (x > 11f) { x = x - 22f; }
             if (x < -11f) { x = x + 22f; }
@@ -62,14 +57,14 @@ namespace Game_Scripts
         public void Thrust(InputAction.CallbackContext ctx)
         {
             _shipThrust = ctx.ReadValue<float>();
-            print(_shipThrust);
         }
 
         public void Shoot(InputAction.CallbackContext ctx)
         {
             if (ctx.performed)
             {
-                GameObject theBullet = Instantiate(bullet, transform.position, transform.rotation);
+                var tempTransform = transform;
+                GameObject theBullet = Instantiate(bullet, tempTransform.position, tempTransform.rotation);
                 theBullet.GetComponent<Bullet>().Shoot(transform.up);
             }
         }
