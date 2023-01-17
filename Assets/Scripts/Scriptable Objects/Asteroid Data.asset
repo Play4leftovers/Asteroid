@@ -14,5 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   asteroidDamage: 0
   asteroidMaxAmount: 0
-  asteroidSpeed: 0
-  asteroidPositions: []
+  asteroidSpeed: 5
+  asteroidSpawnRate: 2
+  asteroidSpawnDistance: 14

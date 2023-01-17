@@ -216,6 +216,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1323520600}
+  - component: {fileID: 1323520601}
   m_Layer: 0
   m_Name: Spawner
   m_TagString: Untagged
@@ -238,6 +239,23 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1323520601
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1323520599}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9769a20ed044e8342b13a3e78dfc3904, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spawnData: {fileID: 11400000, guid: 5473a80435a91b14d9f0b71d8a441824, type: 2}
+  asteroid: {fileID: 4533564646121280496, guid: 3fb36689b247e6b4daadfae50f0087ee, type: 3}
+  asteroidMaxAmount: 0
+  asteroidSpawnRate: 0.5
+  asteroidSpawnDistance: 14
 --- !u!1 &1350833118
 GameObject:
   m_ObjectHideFlags: 0
