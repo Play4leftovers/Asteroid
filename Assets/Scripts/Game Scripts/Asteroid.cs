@@ -6,22 +6,27 @@ namespace Game_Scripts
     public class Asteroid : MonoBehaviour
     {
         public AsteroidData asteroidData;
+        private Rigidbody2D _rb;
         
         [SerializeField] private int asteroidDamage;
-        [SerializeField] private int asteroidMaxAmount;
         [SerializeField] private float asteroidSpeed;
-        [SerializeField] private float asteroidSpawnRate;
-        [SerializeField] private Vector2[] asteroidPositions;
         // Start is called before the first frame update
-        void Start()
+        void Awake()
         {
-        
+            _rb = GetComponent<Rigidbody2D>();
+            asteroidDamage = asteroidData.asteroidDamage;
+            asteroidSpeed = asteroidData.asteroidSpeed;
         }
 
-        // Update is called once per frame
-        void Update()
+        public void Kick(float forceMultiplier, Vector2 dir)
         {
+            _rb.velocity = dir.normalized * asteroidSpeed * forceMultiplier;
+            _rb.AddTorque(Random.Range(-4f,4f));
+        }
         
+        public void Break()
+        {
+            Destroy(gameObject);
         }
     }
 }

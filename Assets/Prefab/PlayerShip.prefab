@@ -10,13 +10,13 @@ GameObject:
   m_Component:
   - component: {fileID: 5672898626250320749}
   - component: {fileID: 2160022000165731678}
-  - component: {fileID: 411009412519025146}
-  - component: {fileID: 4802761397945438668}
-  - component: {fileID: 8645478259602390556}
-  - component: {fileID: 6843646183257688024}
-  m_Layer: 0
+  - component: {fileID: 9038611532714136294}
+  - component: {fileID: 9038611532714136295}
+  - component: {fileID: 9038611532714136292}
+  - component: {fileID: 9038611532714136293}
+  m_Layer: 7
   m_Name: PlayerShip
-  m_TagString: Untagged
+  m_TagString: Ship
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -29,7 +29,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2501438597091229881}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.20638537, y: 0.08911747, z: 0}
+  m_LocalPosition: {x: 0.8654028, y: -0.7239856, z: 0}
   m_LocalScale: {x: 0.1, y: 0.1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -76,7 +76,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: 32d83691a3bc93f4d85ac729db75b97f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -88,8 +88,8 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!61 &411009412519025146
-BoxCollider2D:
+--- !u!60 &9038611532714136294
+PolygonCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -101,7 +101,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.00000023841858, y: 0.21819049}
+  m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -111,10 +111,49 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 3.554523, y: 3.242364}
-  m_EdgeRadius: 0
---- !u!50 &4802761397945438668
+  m_Points:
+    m_Paths:
+    - - {x: -0.155, y: -1.385}
+      - {x: 0.16499999, y: -1.385}
+      - {x: 0.345, y: -1.2049999}
+      - {x: 0.625, y: -1.235}
+      - {x: 1.4649999, y: -1.2049999}
+      - {x: 2.055, y: -1.225}
+      - {x: 2.205, y: -1.6949999}
+      - {x: 2.355, y: -1.865}
+      - {x: 2.715, y: -2.055}
+      - {x: 2.885, y: -2.0249999}
+      - {x: 2.885, y: -0.065}
+      - {x: 2.565, y: 0.255}
+      - {x: 2.435, y: 0.445}
+      - {x: 1.655, y: 0.60499996}
+      - {x: 1.655, y: 0.73499995}
+      - {x: 1.135, y: 1.0649999}
+      - {x: 0.97499996, y: 1.385}
+      - {x: 0.805, y: 1.535}
+      - {x: 0.675, y: 2.075}
+      - {x: 0.355, y: 2.395}
+      - {x: 0.185, y: 2.635}
+      - {x: 0.175, y: 2.645}
+      - {x: -0.195, y: 2.645}
+      - {x: -0.655, y: 2.0349998}
+      - {x: -0.97499996, y: 1.395}
+      - {x: -1.295, y: 0.91499996}
+      - {x: -1.605, y: 0.755}
+      - {x: -1.775, y: 0.555}
+      - {x: -1.775, y: 0.415}
+      - {x: -2.395, y: 0.415}
+      - {x: -2.595, y: 0.285}
+      - {x: -2.885, y: -0.035}
+      - {x: -2.885, y: -2.0249999}
+      - {x: -2.705, y: -2.0449998}
+      - {x: -2.385, y: -1.885}
+      - {x: -2.165, y: -1.7149999}
+      - {x: -2.0149999, y: -1.105}
+      - {x: -1.4649999, y: -1.225}
+      - {x: -1.3117746, y: -1.2212707}
+      - {x: -0.29867697, y: -1.2005671}
+--- !u!50 &9038611532714136295
 Rigidbody2D:
   serializedVersion: 4
   m_ObjectHideFlags: 0
@@ -135,7 +174,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &8645478259602390556
+--- !u!114 &9038611532714136292
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -148,13 +187,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   shipData: {fileID: 11400000, guid: 224acd0025e44374ba6bfc5a9eb629f4, type: 2}
-  bullet: {fileID: 0}
+  bullet: {fileID: 1725282137226044708, guid: d16d92cc7384dde4a9255a03c843171b, type: 3}
   shipHealth: 0
   shipThrustForce: 0
   shipRotationForce: 0
   shipStartPosition: {x: 0, y: 0}
   shipPosition: {x: 0, y: 0}
---- !u!114 &6843646183257688024
+--- !u!114 &9038611532714136293
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -181,10 +220,10 @@ MonoBehaviour:
   m_ActionEvents:
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 8645478259602390556}
+      - m_Target: {fileID: 9038611532714136292}
         m_TargetAssemblyTypeName: Game_Scripts.Ship, Assembly-CSharp
         m_MethodName: Shoot
-        m_Mode: 1
+        m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -195,6 +234,38 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: 0025a62a-b999-4345-afd8-6de746ed6d28
     m_ActionName: Player/Fire[/Keyboard/space]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 9038611532714136292}
+        m_TargetAssemblyTypeName: Game_Scripts.Ship, Assembly-CSharp
+        m_MethodName: Thrust
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 03b4cf2b-9703-43c5-add5-872815953183
+    m_ActionName: Player/Thrust[/Keyboard/w]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 9038611532714136292}
+        m_TargetAssemblyTypeName: Game_Scripts.Ship, Assembly-CSharp
+        m_MethodName: Rotate
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 440ae62e-f6dd-48c9-9afc-b0885b3298d2
+    m_ActionName: Player/Rotate[/Keyboard/a,/Keyboard/d]
   - m_PersistentCalls:
       m_Calls: []
     m_ActionId: 00baf597-f55c-48c1-acdc-2218624fadd7
@@ -235,40 +306,8 @@ MonoBehaviour:
       m_Calls: []
     m_ActionId: 0427b372-806a-44f4-bffb-e4a75118d5cb
     m_ActionName: UI/TrackedDeviceOrientation
-  - m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 8645478259602390556}
-        m_TargetAssemblyTypeName: Game_Scripts.Ship, Assembly-CSharp
-        m_MethodName: Thrust
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-    m_ActionId: 03b4cf2b-9703-43c5-add5-872815953183
-    m_ActionName: Player/Thrust[/Keyboard/w]
-  - m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 8645478259602390556}
-        m_TargetAssemblyTypeName: Game_Scripts.Ship, Assembly-CSharp
-        m_MethodName: Rotate
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-    m_ActionId: 440ae62e-f6dd-48c9-9afc-b0885b3298d2
-    m_ActionName: Player/Rotate[/Keyboard/a,/Keyboard/d]
   m_NeverAutoSwitchControlSchemes: 0
-  m_DefaultControlScheme: Keyboard&Mouse
+  m_DefaultControlScheme: 
   m_DefaultActionMap: Player
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}

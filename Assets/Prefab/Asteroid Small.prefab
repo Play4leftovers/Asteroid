@@ -13,9 +13,9 @@ GameObject:
   - component: {fileID: 3886303244384558921}
   - component: {fileID: 1442728074039660302}
   - component: {fileID: 350816991844084495}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Asteroid Small
-  m_TagString: Untagged
+  m_TagString: Asteroid
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -148,3 +148,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 75552f92124dd5149a3ebb81f3b22eb5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  asteroidData: {fileID: 0}
+  asteroidDamage: 0
+  asteroidSpeed: 0

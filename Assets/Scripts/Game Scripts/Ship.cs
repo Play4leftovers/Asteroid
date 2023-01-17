@@ -1,5 +1,6 @@
 using System;
 using Scriptable_Objects.Code;
+using Unity.Mathematics;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -23,7 +24,7 @@ namespace Game_Scripts
         [SerializeField] private Vector2 shipPosition;
         
         // Start is called before the first frame update
-        void Start()
+        void Awake()
         {
             shipHealth = shipData.shipHealth;
             shipThrustForce = shipData.shipThrustForce;
@@ -41,6 +42,21 @@ namespace Game_Scripts
                 _rb.AddTorque(-(_shipRotationDirection) * shipRotationForce * Time.deltaTime);
             if(_shipThrust != 0)
                 _rb.AddRelativeForce(Vector2.up * (shipThrustForce * Time.deltaTime), ForceMode2D.Force);
+
+            BoundryCheck();
+        }
+
+        private void BoundryCheck()
+        {
+            float x = transform.position.x;
+            float y = transform.position.y;
+
+            if (x > 11f) { x = x - 22f; }
+            if (x < -11f) { x = x + 22f; }
+            if (y > 5.3f) { y = y - 10.6f; }
+            if (y < -5.3f) { y = y + 10.6f; }
+
+            transform.position = new Vector2(x, y);
         }
 
         public void Thrust(InputAction.CallbackContext ctx)
@@ -49,9 +65,13 @@ namespace Game_Scripts
             print(_shipThrust);
         }
 
-        public void Shoot()
+        public void Shoot(InputAction.CallbackContext ctx)
         {
-            
+            if (ctx.performed)
+            {
+                GameObject theBullet = Instantiate(bullet, transform.position, transform.rotation);
+                theBullet.GetComponent<Bullet>().Shoot(transform.up);
+            }
         }
 
         public void Rotate(InputAction.CallbackContext ctx)

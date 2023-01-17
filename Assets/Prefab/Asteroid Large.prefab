@@ -13,9 +13,9 @@ GameObject:
   - component: {fileID: 2322756007966578545}
   - component: {fileID: 3886303244384558921}
   - component: {fileID: 7586537874411321061}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Asteroid Large
-  m_TagString: Untagged
+  m_TagString: Asteroid
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -151,3 +151,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 75552f92124dd5149a3ebb81f3b22eb5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  asteroidData: {fileID: 11400000, guid: 5473a80435a91b14d9f0b71d8a441824, type: 2}
+  asteroidDamage: 0
+  asteroidSpeed: 5

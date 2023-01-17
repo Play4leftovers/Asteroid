@@ -9,6 +9,6 @@ namespace Scriptable_Objects.Code
         public int asteroidMaxAmount;
         public float asteroidSpeed;
         public float asteroidSpawnRate;
-        public Vector2[] asteroidPositions;
+        public float asteroidSpawnDistance;
     }
 }

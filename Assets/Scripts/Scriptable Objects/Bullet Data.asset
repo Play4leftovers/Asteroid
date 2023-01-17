@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 14a2724a0a5e61b499840b48e62e589d, type: 3}
   m_Name: Bullet Data
   m_EditorClassIdentifier: 
-  bulletSpeed: 0
+  bulletSpeed: 10
   bulletMaxAmount: 0
-  bulletHealth: 0
+  bulletHealth: 1
