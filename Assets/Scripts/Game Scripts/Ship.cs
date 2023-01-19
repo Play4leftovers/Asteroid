@@ -1,10 +1,6 @@
-using System;
 using Scriptable_Objects.Code;
-using Unity.Mathematics;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
-using UnityEngine.InputSystem.Composites;
 
 namespace Game_Scripts
 {
@@ -12,16 +8,16 @@ namespace Game_Scripts
     {
         public ShipData shipData;
         public GameObject bullet;
-        
+
+        [SerializeField] private int shipHealth;
+        [SerializeField] private Vector2 shipPosition;
+
         private Rigidbody2D _rb;
         private float _shipRotationDirection;
         private float _shipThrust;
 
-        [SerializeField] private int shipHealth;
-        [SerializeField] private Vector2 shipPosition;
-        
         // Start is called before the first frame update
-        void Awake()
+        private void Awake()
         {
             shipHealth = shipData.shipHealth;
 
@@ -29,27 +25,27 @@ namespace Game_Scripts
         }
 
         // Update is called once per frame
-        void Update()
+        private void Update()
         {
             shipData.shipPosition = shipPosition;
             if (_shipRotationDirection != 0)
-                _rb.AddTorque(-(_shipRotationDirection) * shipData.shipRotationForce * Time.deltaTime);
-            if(_shipThrust != 0)
+                _rb.AddTorque(-_shipRotationDirection * shipData.shipRotationForce * Time.deltaTime);
+            if (_shipThrust != 0)
                 _rb.AddRelativeForce(Vector2.up * (shipData.shipThrustForce * Time.deltaTime), ForceMode2D.Force);
 
-            BoundryCheck();
+            BoundaryCheck();
         }
 
-        private void BoundryCheck()
+        private void BoundaryCheck()
         {
             var position = transform.position;
-            float x = position.x;
-            float y = position.y;
+            var x = position.x;
+            var y = position.y;
 
-            if (x > 11f) { x = x - 22f; }
-            if (x < -11f) { x = x + 22f; }
-            if (y > 5.3f) { y = y - 10.6f; }
-            if (y < -5.3f) { y = y + 10.6f; }
+            if (x > 11f) x = x - 22f;
+            if (x < -11f) x = x + 22f;
+            if (y > 5.3f) y = y - 10.6f;
+            if (y < -5.3f) y = y + 10.6f;
 
             transform.position = new Vector2(x, y);
         }
@@ -64,7 +60,7 @@ namespace Game_Scripts
             if (ctx.performed)
             {
                 var tempTransform = transform;
-                GameObject theBullet = Instantiate(bullet, tempTransform.position, tempTransform.rotation);
+                var theBullet = Instantiate(bullet, tempTransform.position, tempTransform.rotation);
                 theBullet.GetComponent<Bullet>().Shoot(transform.up);
             }
         }
@@ -72,6 +68,15 @@ namespace Game_Scripts
         public void Rotate(InputAction.CallbackContext ctx)
         {
             _shipRotationDirection = ctx.ReadValue<float>();
+        }
+
+        public void Damaged()
+        {
+            shipHealth--;
+            if (shipHealth <= 0)
+            {
+                //End game
+            }
         }
     }
 }
