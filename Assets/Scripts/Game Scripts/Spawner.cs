@@ -11,7 +11,7 @@ namespace Game_Scripts
 
         private void Start()
         {
-            InvokeRepeating("Spawn", 0f, spawnData.asteroidSpawnRate);
+            InvokeRepeating(nameof(Spawn), 0f, spawnData.asteroidSpawnRate);
         } // ReSharper disable Unity.PerformanceAnalysis
         private void Spawn()
         {

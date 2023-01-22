@@ -2,14 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d047de49-d963-4478-b04b-4d6b4044992c" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/Assets/Prefab/Asteroid Large.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefab/Asteroid Large.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Game Scripts/Asteroid.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Game Scripts/Asteroid.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Game Scripts/Bullet.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Game Scripts/Bullet.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Game Scripts/GameManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Game Scripts/GameManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Game Scripts/Ship.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Game Scripts/Ship.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Game Scripts/Spawner.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Game Scripts/Spawner.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Scriptable Objects/Code/AsteroidData.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Scriptable Objects/Code/AsteroidData.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Scriptable Objects/Code/BulletData.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Scriptable Objects/Code/BulletData.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Scriptable Objects/Code/ShipData.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Scriptable Objects/Code/ShipData.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -100,6 +96,7 @@
       <workItem from="1673947553237" duration="2601000" />
       <workItem from="1673951779737" duration="7199000" />
       <workItem from="1674055089659" duration="7505000" />
+      <workItem from="1674157466459" duration="6493000" />
     </task>
     <servers />
   </component>

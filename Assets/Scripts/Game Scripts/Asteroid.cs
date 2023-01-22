@@ -1,5 +1,7 @@
+using System;
 using Scriptable_Objects.Code;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 namespace Game_Scripts
 {
@@ -7,7 +9,7 @@ namespace Game_Scripts
     {
         public AsteroidData astData;
         private Rigidbody2D _rb;
-
+        
         // Start is called before the first frame update
         private void Awake()
         {
@@ -19,6 +21,14 @@ namespace Game_Scripts
             if (other.CompareTag("Background")) Destroy(gameObject);
         }
 
+        private void OnCollisionEnter2D(Collision2D col)
+        {
+            if (col.gameObject.CompareTag("Ship"))
+            {
+                col.gameObject.GetComponent<Ship>().Damaged();
+            }
+        }
+
         public void Kick(float forceMultiplier, Vector2 dir)
         {
             _rb.velocity = dir.normalized * (astData.asteroidSpeed * forceMultiplier);
@@ -27,12 +37,14 @@ namespace Game_Scripts
 
         public void Break()
         {
+            int score = 500;
             if (_rb.mass > 0.7f)
             {
+                score += score;
                 BreakUp();
                 BreakUp();
             }
-
+            astData.AddScore(score);
             Destroy(gameObject);
         }
 

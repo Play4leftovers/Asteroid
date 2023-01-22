@@ -19,8 +19,8 @@ namespace Game_Scripts
         // Start is called before the first frame update
         private void Awake()
         {
-            shipHealth = shipData.shipHealth;
-
+            shipHealth = shipData.shipStartingHealth;
+            shipData.shipCurrentHealth = shipData.shipStartingHealth;
             _rb = GetComponent<Rigidbody2D>();
         }
 
@@ -75,8 +75,9 @@ namespace Game_Scripts
             shipHealth--;
             if (shipHealth <= 0)
             {
-                //End game
+                Application.Quit();
             }
+            shipData.ShipDamage();
         }
     }
 }

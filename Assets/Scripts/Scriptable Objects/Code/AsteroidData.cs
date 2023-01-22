@@ -1,3 +1,5 @@
+using System;
+using Unity.VisualScripting;
 using UnityEngine;
 
 namespace Scriptable_Objects.Code
@@ -13,5 +15,11 @@ namespace Scriptable_Objects.Code
         public float asteroidMass;
         public float asteroidMassMultiplierMinimum;
         public float asteroidMassMultiplierMaximum;
+        public float asteroidScore;
+        
+        public void AddScore(int score)
+        {
+            asteroidScore += score;
+        }
     }
 }
