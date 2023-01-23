@@ -12,7 +12,7 @@ namespace Game_Scripts
         private void Start()
         {
             InvokeRepeating(nameof(Spawn), 0f, spawnData.asteroidSpawnRate);
-        } // ReSharper disable Unity.PerformanceAnalysis
+        }
         private void Spawn()
         {
             #region Check if asteroid maximum exists and if it has been reached
@@ -42,7 +42,7 @@ namespace Game_Scripts
         }
 
 
-        private void OnDrawGizmos()
+        private void OnDrawGizmosSelected()
         {
             Gizmos.DrawWireSphere(transform.position, spawnData.asteroidSpawnDistance);
         }
