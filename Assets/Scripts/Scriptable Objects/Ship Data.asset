@@ -12,8 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5a5e72347a3df0244acd85d8043c736b, type: 3}
   m_Name: Ship Data
   m_EditorClassIdentifier: 
-  shipHealth: 5
+  shipStartingHealth: 3
+  shipCurrentHealth: 3
   shipThrustForce: 1000
-  shipRotationForce: 15
+  shipRotationForce: 35
   shipPosition: {x: 0, y: 0}
   shipStartPosition: {x: 0, y: 0}

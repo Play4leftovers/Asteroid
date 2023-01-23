@@ -37,7 +37,7 @@ namespace Game_Scripts
 
         public void Break()
         {
-            int score = 500;
+            int score = astData.asteroidScoreValue;
             if (_rb.mass > 0.7f)
             {
                 score += score;

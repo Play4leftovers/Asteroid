@@ -13,10 +13,13 @@ MonoBehaviour:
   m_Name: Asteroid Data
   m_EditorClassIdentifier: 
   asteroidMaxAmountEnabled: 0
-  asteroidMaxAmount: 0
+  asteroidMaxAmount: 3
+  asteroidScoreValue: 500
   asteroidSpeed: 2
+  asteroidFiringAngle: 25
   asteroidSpawnRate: 1
   asteroidSpawnDistance: 12
   asteroidMass: 1
-  asteroidMassMultiplierMinimum: 0.5
-  asteroidMassMultiplierMaximum: 2
+  asteroidMassMultiplierMinimum: 0.8
+  asteroidMassMultiplierMaximum: 1.3
+  asteroidScore: 6500

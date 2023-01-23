@@ -18,13 +18,13 @@ namespace Game_Scripts
             #region Check if asteroid maximum exists and if it has been reached
 
             if (spawnData.asteroidMaxAmountEnabled)
-                if (transform.childCount > spawnData.asteroidMaxAmount)
+                if (transform.childCount >= spawnData.asteroidMaxAmount)
                     return;
 
             #endregion
 
             var spawnPoint = Random.insideUnitCircle.normalized * spawnData.asteroidSpawnDistance;
-            var firingAngle = Random.Range(-25f, 25f);
+            var firingAngle = Random.Range(-spawnData.asteroidFiringAngle, spawnData.asteroidFiringAngle);
             var rot = Quaternion.AngleAxis(firingAngle, new Vector3(0, 0, 1));
 
             var theAsteroid = Instantiate(asteroid, spawnPoint, rot, transform);
